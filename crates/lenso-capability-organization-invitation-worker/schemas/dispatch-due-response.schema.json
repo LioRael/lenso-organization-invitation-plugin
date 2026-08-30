@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["processed", "completed", "retry_scheduled", "permanent_failed", "has_more"],
+  "properties": {
+    "processed": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "completed": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "retry_scheduled": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "permanent_failed": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "has_more": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

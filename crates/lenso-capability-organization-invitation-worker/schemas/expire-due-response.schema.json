@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["expired", "items", "has_more"],
+  "properties": {
+    "expired": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "items": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": ["invitation_id", "identifier", "revision"],
+        "properties": {
+          "invitation_id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "revision": { "type": "string", "pattern": "^[1-9][0-9]*$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "has_more": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

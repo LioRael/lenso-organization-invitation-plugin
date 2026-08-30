@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["invitation_id", "identifier", "organization_id", "state", "membership_id", "revision"],
+  "properties": {
+    "invitation_id": { "type": "string" },
+    "identifier": { "type": "string" },
+    "organization_id": { "type": "string" },
+    "state": { "type": "string", "enum": ["accepted"] },
+    "membership_id": { "type": "string" },
+    "revision": { "type": "string", "pattern": "^[1-9][0-9]*$" }
+  },
+  "additionalProperties": false
+}

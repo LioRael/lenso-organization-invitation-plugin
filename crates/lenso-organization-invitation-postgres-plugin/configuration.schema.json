@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PostgreSQL Organization Invitation Plugin configuration",
+  "type": "object",
+  "required": ["schema", "database_url_secret", "token_pepper_secret", "token_derivation_secret", "auth_issuer", "auth_assertion_public_key", "management_callers", "acceptance_callers", "worker_callers", "invitation_url_base"],
+  "properties": {
+    "schema": { "type": "string", "minLength": 1, "maxLength": 63 },
+    "database_url_secret": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "token_pepper_secret": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "token_derivation_secret": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "auth_issuer": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "auth_assertion_public_key": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "management_callers": { "type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 256 } },
+    "acceptance_callers": { "type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 256 } },
+    "worker_callers": { "type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 256 } },
+    "invitation_url_base": { "type": "string", "format": "uri", "minLength": 1, "maxLength": 2048 },
+    "locale": { "type": "string", "enum": ["en", "en-US"], "default": "en" },
+    "token_ttl_seconds": { "type": "integer", "minimum": 300, "maximum": 2592000, "default": 604800 },
+    "command_lease_seconds": { "type": "integer", "minimum": 30, "maximum": 3600, "default": 120 },
+    "max_command_attempts": { "type": "integer", "minimum": 1, "maximum": 20, "default": 8 },
+    "retry_base_seconds": { "type": "integer", "minimum": 1, "maximum": 3600, "default": 30 }
+  },
+  "additionalProperties": false
+}

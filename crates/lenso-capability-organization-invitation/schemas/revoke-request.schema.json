@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "invitation_id", "expected_revision", "reason", "idempotency_key"],
+  "properties": {
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "invitation_id": { "type": "string", "minLength": 36, "maxLength": 36 },
+    "expected_revision": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "idempotency_key": { "type": "string", "minLength": 1, "maxLength": 200 }
+  },
+  "additionalProperties": false
+}
