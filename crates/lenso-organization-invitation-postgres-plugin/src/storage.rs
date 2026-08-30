@@ -396,7 +396,10 @@ pub(crate) async fn resend_invitation(
         actor,
         request_hash,
         organization_id,
-        Some(invitation_id),
+        // Bind the resource FK only after acquiring the invitation row lock. If two
+        // different mutations bind it here, each transaction first takes a key-share
+        // lock through the FK and can deadlock while both upgrade to FOR UPDATE.
+        None,
     )
     .await?
     {
@@ -520,7 +523,9 @@ pub(crate) async fn revoke_invitation(
         actor,
         request_hash,
         organization_id,
-        Some(invitation_id),
+        // Defer the FK until complete_mutation, after the invitation row has
+        // serialized competing revision-based mutations.
+        None,
     )
     .await?
     {
@@ -665,7 +670,9 @@ pub(crate) async fn begin_accept(
         actor,
         request_hash,
         "pending-resource-lookup",
-        Some(invitation_id),
+        // The acceptance transaction binds the resource below, after its row lock.
+        // Deferring the FK prevents the same lock-upgrade deadlock as resend/revoke.
+        None,
     )
     .await?
     {
