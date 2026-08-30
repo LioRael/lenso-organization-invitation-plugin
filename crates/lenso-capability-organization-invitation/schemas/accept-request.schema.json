@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["invitation_id", "token", "expected_revision", "idempotency_key"],
+  "properties": {
+    "invitation_id": { "type": "string", "minLength": 36, "maxLength": 36 },
+    "token": { "type": "string", "minLength": 32, "maxLength": 256, "x-lenso-sensitive": true },
+    "expected_revision": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "idempotency_key": { "type": "string", "minLength": 1, "maxLength": 200 }
+  },
+  "additionalProperties": false
+}

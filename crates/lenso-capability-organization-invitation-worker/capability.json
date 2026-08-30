@@ -1,0 +1,22 @@
+{
+  "id": "lenso.organization-invitation-worker@1",
+  "version": "1.0.0",
+  "portable": true,
+  "cross_lane_transfer": true,
+  "operations": [
+    {
+      "name": "expire_due",
+      "interaction": "request",
+      "request_schema": "schemas/batch-request.schema.json",
+      "response_schema": "schemas/expire-due-response.schema.json",
+      "domain_error_schema": "schemas/error.schema.json"
+    },
+    {
+      "name": "dispatch_due",
+      "interaction": "request",
+      "request_schema": "schemas/batch-request.schema.json",
+      "response_schema": "schemas/dispatch-due-response.schema.json",
+      "domain_error_schema": "schemas/error.schema.json"
+    }
+  ]
+}

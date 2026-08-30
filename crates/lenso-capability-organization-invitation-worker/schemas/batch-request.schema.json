@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "limit", "idempotency_key"],
+  "properties": {
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "limit": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "idempotency_key": { "type": "string", "minLength": 1, "maxLength": 200 }
+  },
+  "additionalProperties": false
+}

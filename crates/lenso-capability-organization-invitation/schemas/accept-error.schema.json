@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    { "const": "unauthenticated" },
+    { "const": "forbidden" },
+    { "const": "invalid_request" },
+    { "const": "invitation_not_found" },
+    { "const": "token_invalid" },
+    { "const": "invitation_expired" },
+    { "const": "revision_conflict" },
+    { "const": "idempotency_conflict" },
+    { "const": "invalid_transition" },
+    { "const": "acceptance_in_progress" }
+  ]
+}

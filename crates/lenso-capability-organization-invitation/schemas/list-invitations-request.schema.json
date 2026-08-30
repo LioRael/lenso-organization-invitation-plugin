@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "limit"],
+  "properties": {
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "state": {
+      "type": "string",
+      "enum": ["pending", "accepted", "revoked", "expired"]
+    },
+    "email": { "type": "string", "minLength": 3, "maxLength": 320, "x-lenso-sensitive": true },
+    "limit": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "cursor": { "type": "string", "maxLength": 512 }
+  },
+  "additionalProperties": false
+}

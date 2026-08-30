@@ -1,0 +1,53 @@
+[package]
+name = "lenso-organization-invitation-postgres-plugin"
+version = "0.1.0"
+description = "PostgreSQL-backed Organization Invitation lifecycle Plugin for Lenso applications."
+edition.workspace = true
+license.workspace = true
+publish = true
+repository.workspace = true
+rust-version.workspace = true
+
+[package.metadata.lenso]
+plugin-id = "lenso.organization-invitation.postgres"
+root-slot = "organization-invitation"
+
+[features]
+default = []
+postgres-acceptance = []
+
+[dependencies]
+argon2.workspace = true
+base64.workspace = true
+futures.workspace = true
+getrandom.workspace = true
+hmac.workspace = true
+lenso.workspace = true
+lenso-auth-sdk.workspace = true
+lenso-capability-access-control.workspace = true
+lenso-capability-notification-transactional.workspace = true
+lenso-capability-organization-directory.workspace = true
+lenso-capability-organization-invitation = { version = "0.1.0", path = "../lenso-capability-organization-invitation" }
+lenso-capability-organization-invitation-worker = { version = "0.1.0", path = "../lenso-capability-organization-invitation-worker" }
+lenso-capability-organization-membership.workspace = true
+lenso-capability-organization-membership-admin.workspace = true
+lenso-capability-secrets.workspace = true
+lenso-kernel.workspace = true
+lenso-native-adapter.workspace = true
+lenso-postgres-kit.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+sqlx.workspace = true
+thiserror.workspace = true
+time.workspace = true
+url.workspace = true
+uuid.workspace = true
+zeroize.workspace = true
+
+[dev-dependencies]
+lenso-app-plan.workspace = true
+tokio.workspace = true
+
+[lints]
+workspace = true

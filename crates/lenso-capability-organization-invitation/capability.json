@@ -1,0 +1,50 @@
+{
+  "id": "lenso.organization-invitation@1",
+  "version": "1.0.0",
+  "portable": true,
+  "cross_lane_transfer": true,
+  "operations": [
+    {
+      "name": "invite",
+      "interaction": "request",
+      "request_schema": "schemas/invite-request.schema.json",
+      "response_schema": "schemas/token-response.schema.json",
+      "domain_error_schema": "schemas/admin-error.schema.json"
+    },
+    {
+      "name": "get_invitation",
+      "interaction": "request",
+      "request_schema": "schemas/get-invitation-request.schema.json",
+      "response_schema": "schemas/invitation-response.schema.json",
+      "domain_error_schema": "schemas/admin-error.schema.json"
+    },
+    {
+      "name": "list_invitations",
+      "interaction": "request",
+      "request_schema": "schemas/list-invitations-request.schema.json",
+      "response_schema": "schemas/list-invitations-response.schema.json",
+      "domain_error_schema": "schemas/admin-error.schema.json"
+    },
+    {
+      "name": "resend",
+      "interaction": "request",
+      "request_schema": "schemas/resend-request.schema.json",
+      "response_schema": "schemas/token-response.schema.json",
+      "domain_error_schema": "schemas/admin-error.schema.json"
+    },
+    {
+      "name": "revoke",
+      "interaction": "request",
+      "request_schema": "schemas/revoke-request.schema.json",
+      "response_schema": "schemas/invitation-response.schema.json",
+      "domain_error_schema": "schemas/admin-error.schema.json"
+    },
+    {
+      "name": "accept",
+      "interaction": "request",
+      "request_schema": "schemas/accept-request.schema.json",
+      "response_schema": "schemas/accept-response.schema.json",
+      "domain_error_schema": "schemas/accept-error.schema.json"
+    }
+  ]
+}
