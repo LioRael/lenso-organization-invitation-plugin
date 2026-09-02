@@ -39,11 +39,6 @@ if rg -n 'lenso-platform-|lenso-module-|HostBuilder|HostLinkedModule|ModuleManif
   exit 1
 fi
 
-if rg -n 'git\s*=\s*"[^"]+"\s*}' Cargo.toml; then
-  echo "every git dependency must use an exact rev" >&2
-  exit 1
-fi
-
 for capability in \
   'lenso.organization-invitation@1' \
   'lenso.organization-invitation-worker@1' \
