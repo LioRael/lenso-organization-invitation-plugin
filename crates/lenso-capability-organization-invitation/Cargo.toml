@@ -1,6 +1,6 @@
 [package]
 name = "lenso-capability-organization-invitation"
-version = "0.1.0"
+version = "0.1.1"
 description = "Portable Organization Invitation lifecycle Capability for Lenso applications."
 edition.workspace = true
 license.workspace = true

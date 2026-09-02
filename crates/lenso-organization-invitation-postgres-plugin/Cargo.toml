@@ -1,6 +1,6 @@
 [package]
 name = "lenso-organization-invitation-postgres-plugin"
-version = "0.1.0"
+version = "0.1.1"
 description = "PostgreSQL-backed Organization Invitation lifecycle Plugin for Lenso applications."
 edition.workspace = true
 license.workspace = true
@@ -27,8 +27,8 @@ lenso-auth-sdk.workspace = true
 lenso-capability-access-control.workspace = true
 lenso-capability-notification-transactional.workspace = true
 lenso-capability-organization-directory.workspace = true
-lenso-capability-organization-invitation = { version = "0.1.0", path = "../lenso-capability-organization-invitation" }
-lenso-capability-organization-invitation-worker = { version = "0.1.0", path = "../lenso-capability-organization-invitation-worker" }
+lenso-capability-organization-invitation = { version = "0.1.1", path = "../lenso-capability-organization-invitation" }
+lenso-capability-organization-invitation-worker = { version = "0.1.1", path = "../lenso-capability-organization-invitation-worker" }
 lenso-capability-organization-membership.workspace = true
 lenso-capability-organization-membership-admin.workspace = true
 lenso-capability-secrets.workspace = true

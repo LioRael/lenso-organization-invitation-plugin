@@ -1,6 +1,6 @@
 [package]
 name = "lenso-capability-organization-invitation-worker"
-version = "0.1.0"
+version = "0.1.1"
 description = "Portable bounded worker role for Organization Invitation expiry and durable side effects."
 edition.workspace = true
 license.workspace = true
