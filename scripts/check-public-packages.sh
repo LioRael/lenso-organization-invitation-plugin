@@ -7,12 +7,24 @@ if [[ "${LENSO_PACKAGE_ALLOW_DIRTY:-0}" == "1" ]]; then
   flags+=(--allow-dirty)
 fi
 
-for manifest in crates/*/Cargo.toml; do
+public_packages=(
+  lenso-capability-organization-invitation
+  lenso-capability-organization-invitation-worker
+  lenso-organization-invitation-postgres-plugin
+)
+
+for package in "${public_packages[@]}"; do
+  manifest="crates/$package/Cargo.toml"
   rg -qx 'publish = true' "$manifest" || {
-    printf '%s is not explicitly publishable\n' "$manifest" >&2
+    printf '%s is not explicitly publishable\n' "$package" >&2
     exit 1
   }
 done
+
+rg -qx 'publish = false' crates/lenso-organization-invitation-agent-tools-plugin/Cargo.toml || {
+  printf '%s must remain private\n' 'lenso-organization-invitation-agent-tools-plugin' >&2
+  exit 1
+}
 
 for package in \
   lenso-capability-organization-invitation \
