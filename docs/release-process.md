@@ -6,6 +6,8 @@ This repository has three public Rust crates, published in dependency order:
 2. `lenso-capability-organization-invitation-worker`
 3. `lenso-organization-invitation-postgres-plugin`
 
+The linked Agent Tool adapter is private and is not part of this release set.
+
 Publication is manual-only from a clean, reviewed `main` checkout through
 `.github/workflows/release-plz.yml`. Pushes to `main` can update a Release-plz
 PR; merging that PR does not publish. A live release additionally requires the

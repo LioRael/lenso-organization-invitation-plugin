@@ -37,6 +37,12 @@ single-use token is its resource-local proof; an invitee is not required to be
 an Organization member before acceptance. RBAC policy, memberships, and
 Organization facts remain owned by their independent providers.
 
+The private `lenso.organization-invitation.agent-tools` adapter exposes only
+authorized get/list/revoke administration to a Console Agent. `invite` and
+`resend` are deliberately absent because their one-time token responses must
+not enter model or Session context; `accept` and worker operations are also not
+Agent Tools.
+
 See [the Plugin card](docs/plugin-card.md) for the complete authority and state
 model and [PostgreSQL operations](docs/postgresql-operations.md) for setup,
 recovery, and worker procedures.
