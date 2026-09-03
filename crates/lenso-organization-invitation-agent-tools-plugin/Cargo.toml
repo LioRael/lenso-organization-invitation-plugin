@@ -16,7 +16,7 @@ root-slot = "tool-providers"
 futures.workspace = true
 lenso.workspace = true
 lenso-capability-agent-tool-provider.workspace = true
-lenso-capability-organization-invitation = { version = "0.1.0", path = "../lenso-capability-organization-invitation" }
+lenso-capability-organization-invitation = { version = "0.1.1", path = "../lenso-capability-organization-invitation" }
 lenso-kernel.workspace = true
 serde.workspace = true
 serde_json.workspace = true
