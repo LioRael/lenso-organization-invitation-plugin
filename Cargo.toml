@@ -3,6 +3,7 @@ resolver = "2"
 members = [
     "crates/lenso-capability-organization-invitation",
     "crates/lenso-capability-organization-invitation-worker",
+    "crates/lenso-organization-invitation-agent-tools-plugin",
     "crates/lenso-organization-invitation-postgres-plugin",
 ]
 
@@ -22,6 +23,7 @@ hmac = "0.12"
 lenso = { version = "0.5.0" }
 lenso-app-plan = { version = "0.3.0" }
 lenso-auth-sdk = { version = "0.2.1" }
+lenso-capability-agent-tool-provider = { version = "0.1.0" }
 lenso-capability-access-control = { version = "0.1.0" }
 lenso-capability-notification-transactional = { version = "0.1.0" }
 lenso-capability-organization-directory = { version = "0.1.0" }
